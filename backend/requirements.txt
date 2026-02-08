@@ -1,0 +1,36 @@
+# Backend API Dependencies for Phase II Todo Application
+
+# FastAPI - High-performance async web framework
+fastapi>=0.109.0
+
+# SQLModel - Type-safe ORM combining SQLAlchemy + Pydantic
+sqlmodel>=0.0.14
+
+# Database drivers
+# Using psycopg (version 3) instead of psycopg2 for better Windows compatibility
+psycopg[binary]>=3.1.0  # PostgreSQL adapter for Python (v3)
+
+# Authentication & Security
+python-jose[cryptography]>=3.3.0  # JWT token creation and verification
+passlib[bcrypt]>=1.7.4  # Password hashing with bcrypt
+
+# Validation
+email-validator>=2.1.0  # RFC 5322 email validation
+
+# ASGI Server
+uvicorn[standard]>=0.27.0  # Production-ready ASGI server
+
+# HTTP
+python-multipart>=0.0.6  # Required for form data parsing
+
+# Environment variables
+python-dotenv>=1.0.0  # Load .env file for local development
+
+# Settings management
+pydantic-settings>=2.1.0  # Environment-based configuration
+
+# Phase III: AI Chatbot Dependencies
+cohere>=5.0.0  # Cohere Python SDK for LLM chat and tool calling
+httpx>=0.25.0  # HTTP client for async API calls
+openai>=1.0.0  # OpenAI SDK for agent orchestration and tool calling
+mcp>=0.9.0  # Model Context Protocol SDK for stateless tool execution

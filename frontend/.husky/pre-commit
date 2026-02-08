@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Pre-commit hook for frontend
+echo "🔍 Running pre-commit checks..."
+
+cd frontend
+
+# Run linting
+echo "📝 Linting code..."
+npm run lint || {
+  echo "❌ ESLint failed. Please fix linting errors."
+  exit 1
+}
+
+# Run type checking
+echo "🔧 Type checking..."
+npm run type-check || {
+  echo "❌ TypeScript type check failed. Please fix type errors."
+  exit 1
+}
+
+echo "✅ Pre-commit checks passed!"
